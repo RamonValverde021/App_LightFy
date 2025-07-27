@@ -1,5 +1,6 @@
 package com.lightfy;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.os.Handler;
@@ -21,12 +22,28 @@ import java.net.URI;
 public class WebSocket extends WebSocketClient { // Essa é a classe personalizada que estende (herda) WebSocketClient, da biblioteca Java-WebSocket
     private final Activity activity; // Armazena a referência da Activity (tela atual) para podermos atualizar a interface gráfica
     private final Handler reconnectHandler = new Handler(Looper.getMainLooper());
-    private boolean isReconnecting = false;
+    private boolean isReconnecting = false; // Referência estática para controlar a instância atual ativa
+    @SuppressLint("StaticFieldLeak")
+    private static WebSocket currentInstance = null;
+
+    private final URI uri;
 
     // Construtor da classe MeuWebSocket
     public WebSocket(URI serverUri, Activity activity) { // Recebe o endereço do servidor WebSocket (URI) e a Activity onde será usado
         super(serverUri);                                   // Chama o construtor da classe pai (WebSocketClient) com o endereço do servidor
         this.activity = activity;                           // Armazena a Activity para usar depois dentro dos métodos da classe
+        uri = serverUri;
+
+        // Finaliza reconexão anterior (se houver)
+        if (currentInstance != null && !currentInstance.uri.equals(serverUri)) {
+            currentInstance.stopReconnect();
+            try {
+                currentInstance.close();
+            } catch (Exception e) {
+                Log.e("debugWebSocket", "Erro ao fechar WebSocket anterior", e);
+            }
+        }
+        currentInstance = this; // atualiza instância ativa
     }
 
     // Metodo que é automaticamente chamado quando o WebSocket recebe uma mensagem do servidor (ESP8266)
@@ -102,6 +119,10 @@ public class WebSocket extends WebSocketClient { // Essa é a classe personaliza
     // Metodos das reconexão automatica
     // Método para iniciar reconexão automática
     public void startReconnect() {
+        if (currentInstance != this) {
+            Log.d("debugWebSocket", uri + "\nInstância antiga detectada, ignorando reconexão.");
+            return; // Evita reconectar se não for a instância ativa
+        }
         if (!isReconnecting) {
             isReconnecting = true;
             reconnectHandler.post(reconnectRunnable);
@@ -124,6 +145,7 @@ public class WebSocket extends WebSocketClient { // Essa é a classe personaliza
             } else {
                 Log.d("debugWebSocket", "Tentando reconectar WebSocket...");
                 try {
+                    Log.d("debugWebSocket", "Classe - Conectando com: " + uri);
                     reconnect(); // método da própria WebSocketClient
                 } catch (Exception e) {
                     Log.e("debugWebSocket", "Erro ao tentar reconectar", e);
@@ -133,5 +155,4 @@ public class WebSocket extends WebSocketClient { // Essa é a classe personaliza
             reconnectHandler.postDelayed(this, 3000);
         }
     };
-
 }

@@ -1,13 +1,10 @@
 package com.lightfy;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,7 +26,6 @@ import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
     Intent configScreen, linkedin;
-    private URI uri;
     private WebSocket socket;
     TextView copyright;
     ImageView btnLamp, btnScreenConfig;
@@ -61,13 +57,14 @@ public class MainActivity extends AppCompatActivity {
         fadeEffect(copyright, null);
 
         // Inicializa primeira tentatica de conectar com o dispositivo
+        Log.d("debugWebSocket", "onCreate MainAcitivity");
         tinyDB = new TinyDB(this);
         String ip = tinyDB.get("ip", "192.168.0.120"); // Recupera os dados de ip, se não tiver, retorna 192.168.0.120
         int port = tinyDB.getInt("port", 8266); // Recupera os dados da porta, se não tiver, retorna 8266
-
+        port = 8266;
         try {
-            Log.d("debugWebSocket", "Conectando com: ws://" + ip + ":" + port + "/");
-            uri = new URI("ws://" + ip + ":" + port + "/"); // Certifique-se que é a porta certa!
+            Log.d("debugWebSocket", "Principal - Conectando com: ws://" + ip + ":" + port + "/");
+            URI uri = new URI("ws://" + ip + ":" + port + "/"); // Certifique-se que é a porta certa!
             socket = new WebSocket(uri, this);  // passando a Activity agora usando a variável global
             socket.connect();
             if (socket == null || !socket.isOpen()) {

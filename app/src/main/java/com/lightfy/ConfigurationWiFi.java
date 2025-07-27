@@ -164,24 +164,13 @@ public class ConfigurationWiFi extends AppCompatActivity {
                         Log.d("debugWebSocket", "Já conectado!");
                     } else {
                         try {
-                            Log.d("debugWebSocket", "Conectando com: ws://192.168.4.1:" + port + "/");
-                            uri = new URI("ws://192.168.4.1:" + port + "/"); // Certifique-se que é a porta certa!
+                            Log.d("debugWebSocket", "Configuração - Conectando com: ws://192.168.4.1:" + port + "/");
+                            URI uri = new URI("ws://192.168.4.1:" + port + "/"); // Certifique-se que é a porta certa!
                             socket = new WebSocket(uri, this);  // passando a Activity agora usando a variável globalLog.d("debugWebSocket", "Tentando reconectar..."); // Escreve no Logcat que a tentativa de reconexão começou (útil para debug)
-                            try {
-                                if (socket != null && socket.isOpen()) {                       // Se o WebSocket estiver conectado, não faz nada (evita reconexões desnecessárias)
-                                    Toast.makeText(getApplicationContext(), getString(R.string.msgAppConnected), Toast.LENGTH_SHORT).show();       // Exibe um mensagem indicando app conectado
-                                } else {                                                       // Se não estiver conectado, cria uma nova instância do WebSocket
-                                    socket = new WebSocket(uri, ConfigurationWiFi.this);  // Passando o endereço do ESP (uri) e a Activity atual (this)
-                                    socket.connect();                                          // Inicia a tentativa de conexão com o servidor WebSocket
-                                }
-                            } catch (
-                                    Exception e) {                                       // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
-                                e.printStackTrace();                                      // Imprime os detalhes do erro no Logcat
-                                Toast.makeText(getApplicationContext(), getString(R.string.msgFailReconnect), Toast.LENGTH_SHORT).show();                    // Atualiza a interface para informar que a reconexão falhou
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), getString(R.string.msgErrorConnecting), Toast.LENGTH_SHORT).show();
+                            socket.connect(); // Inicia a conexão com o servidor WebSocket
+                        } catch (Exception e) { // Se algo der errado (ex: URI inválido, falha de rede...), captura a exceção
+                            e.printStackTrace(); // Imprime os detalhes do erro no Logcat
+                            Toast.makeText(getApplicationContext(), getString(R.string.msgFailReconnect), Toast.LENGTH_SHORT).show();  // Atualiza a interface para informar que a reconexão falhou
                             Log.d("debugWebSocket", "Falha ao conectar...");
                         }
                     }
@@ -438,5 +427,19 @@ public class ConfigurationWiFi extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (socket != null) {
+            socket.stopReconnect(); // Evita reconectar em segundo plano
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //socket.startReconnect(); // Reinicia a reconexão ao voltar para a tela
     }
 }
