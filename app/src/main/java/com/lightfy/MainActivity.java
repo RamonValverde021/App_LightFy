@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         tinyDB = new TinyDB(this);
         String ip = tinyDB.get("ip", "192.168.0.120"); // Recupera os dados de ip, se não tiver, retorna 192.168.0.120
         int port = tinyDB.getInt("port", 8266); // Recupera os dados da porta, se não tiver, retorna 8266
-        port = 8266;
         try {
             Log.d("debugWebSocket", "Principal - Conectando com: ws://" + ip + ":" + port + "/");
             URI uri = new URI("ws://" + ip + ":" + port + "/"); // Certifique-se que é a porta certa!
