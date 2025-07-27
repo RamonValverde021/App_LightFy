@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores do sistema -->
+    <attr name="clrMainScreen" format="color" />
+    <attr name="clrText" format="color" />
+    <attr name="clrHint" format="color"/>
+
+    <!-- Cores botão padrao -->
+    <attr name="clrStdBtn_Border" format="color"/>
+    <attr name="clrStdBtn_Background" format="color"/>
+    <attr name="clrStdBtn_Text" format="color"/>
+
+    <!-- Cores borda scrollView -->
+    <attr name="clrScrViw_Border" format="color"/>
+    <attr name="clrScrViw_Background" format="color"/>
+
+    <!-- Cores botão configuração wifi -->
+    <attr name="clrBtnConfig_Border" format="color"/>
+    <attr name="clrBtnConfig_Background" format="color"/>
+    <attr name="clrBtnConfig_Text" format="color"/>
+    <attr name="clrBtnConfig_RippleColor" format="color"/>
+
+    <!-- Cor Label da EditText configuração wifi -->
+    <attr name="clrLblConfigWiFi" format="color"/>
+
+    <!-- Cor do painel dos dados wi-fi -->
+    <attr name="clrPanelConfigWiFi" format="color"/>
+
+    <!-- Fonte Titulo Principal -->
+    <attr name="fntMainTitle" format="reference"/>
+
+</resources>

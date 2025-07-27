@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LightFy</string>
+    <string name="msgAppConnected">Aplicativo Conectado!</string>
+    <string name="msgConnectionToDeviceIsNotActive">Conexão com o dispositivo não está ativo!</string>
+    <string name="msgFailReconnect">Falha ao reconectar</string>
+    <string name="msgErrorConnecting">Erro ao conectar</string>
+    <string name="btnConnect">Conectar</string>
+    <string name="tltSETTINGS">CONFIGURAÇÕES:</string>
+    <string name="tltConfigureDeviceNetwork">Configurar Rede do Dispositivo</string>
+    <string name="tltWiFiNetworkSSID">Rede Wi-Fi (SSID):</string>
+    <string name="tltPassword">Senha:</string>
+    <string name="tltIPAddress">Endreço IP:</string>
+    <string name="tltSubnetMask">Máscara de Sub-Rede:</string>
+    <string name="tltDefaultGateway">Gateway Padrão:</string>
+    <string name="tltDNS">DNS:</string>
+    <string name="tltPort">Porta:</string>
+    <string name="hntMyWiFiAddress">Meu endereço Wi-Fi...</string>
+    <string name="btnSaveConfig">Salvar</string>
+    <string name="hntMyWiFiPassword">Senha do meu Wi-Fi...</string>
+    <string name="btnSendMessage">Enviar Mensagem</string>
+    <string name="txtDoubtTitle">Como configurar a conexão do dispositivo de automação à rede de internet residencial:\n</string>
+    <string name="txtDoubt">"1 - Para começar, reinicie o dispositivo pressionando o botão &quot;RESET&quot;.\n\n2 - Após ver o LED azul piscar uma vez, pressione e segure o botão &quot;CONFIG&quot; até o LED ficar ligado constantemente.\n\n3 - Agora, no seu smartphone, conecte-se à rede Wi-Fi chamada &quot;LightFy&quot; usando a senha &quot;adminLFy1&quot;.\n\n4 - Abra o aplicativo e vá para as configurações. Preencha o campo “Porta” com o número escrito debaixo do dispositivo e em seguida clique no botão &quot;Conectar&quot;. O botão ficará azul quando o aplicativo se conectar ao dispositivo.\n\n5 - Preencha o nome da sua rede Wi-Fi residencial e a senha da mesma.\n\n6 - Para configurar os campos de IP:\n\n\t• No campo &quot;Endereço IP&quot;, use um endereço disponível na sua rede local.\n\t• Mantenha &quot;Máscara de Sub-Rede&quot; como 255.255.255.0.\n\t• No campo &quot;Gateway Padrão&quot;, insira o endereço IP do seu modem ou roteador.\n\t• Mantenha &quot;DNS&quot; como 8.8.8.8.\n\nSe tiver dúvidas, é aconselhável procurar a ajuda de um profissional de TI."</string>
+    <string name="txtConfirmSSID">SSID:</string>
+    <string name="txtConfirmPassword">Senha:</string>
+    <string name="txtConfirmIP">IP:</string>
+    <string name="txtConfirmSubNet">Sub-Rede:</string>
+    <string name="txtConfirmGateway">Gateway:</string>
+    <string name="txtConfirmDNS">DNS:</string>
+    <string name="txtConfirmPort">Porta:</string>
+    <string name="tltConfirmation">Confirmação:</string>
+    <string name="txtBtnCancel">Cancelar</string>
+    <string name="txtBtnOk">Ok</string>
+    <string name="altRequiredField">Campo obrigatorio!</string>
+    <string name="altInvalidIPAddress">Endereço IP inválido.</string>
+    <string name="msgSettingsSaved">Configurações Salvas!</string>
+    <string name="lblCopyright">Copyright© 2021 - by Ramon A. Valverde</string>
+    <string name="msgSavedSettingsDeleted">Configurações salvas excluidas!</string>
+    <string name="altInvalidValue">Valor Invalido!</string>
+</resources>

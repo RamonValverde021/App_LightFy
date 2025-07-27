@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/comic_neue</item>
+        <item>@font/comic_neue_bold</item>
+        <item>@font/roboto</item>
+        <item>@font/roboto_italic</item>
+        <item>@font/tektur</item>
+        <item>@font/tektur_medium</item>
+        <item>@font/tektur_semibold</item>
+    </array>
+</resources>

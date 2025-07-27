@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LightFy</string>
+    <string name="msgAppConnected">Applicazione connessa!</string>
+    <string name="msgConnectionToDeviceIsNotActive">La connessione al dispositivo non è attiva!</string>
+    <string name="msgFailReconnect">Impossibile riconnettersi</string>
+    <string name="msgErrorConnecting">Errore di connessione</string>
+    <string name="btnConnect">Connetti</string>
+    <string name="tltSETTINGS">IMPOSTAZIONI:</string>
+    <string name="tltConfigureDeviceNetwork">Configurare la Rete del Dispositivo</string>
+    <string name="tltWiFiNetworkSSID">Rete Wi-Fi (SSID):</string>
+    <string name="tltPassword">Password:</string>
+    <string name="tltIPAddress">Indirizzo IP:</string>
+    <string name="tltSubnetMask">Maschera di sottorete:</string>
+    <string name="tltDefaultGateway">Gateway predefinito:</string>
+    <string name="tltDNS">DNS:</string>
+    <string name="tltPort">Porta:</string>
+    <string name="hntMyWiFiAddress">Il mio indirizzo Wi-Fi...</string>
+    <string name="btnSaveConfig">Salva</string>
+    <string name="hntMyWiFiPassword">La mia password Wi-Fi...</string>
+    <string name="btnSendMessage">Invia messaggio</string>
+    <string name="txtDoubtTitle">Come configurare la connessione del dispositivo di automazione alla rete Internet domestica:\n</string>
+    <string name="txtDoubt">"1 - Per iniziare, riavvia il dispositivo premendo il pulsante &quot;RESET&quot;.\n\n2 - Dopo aver visto il LED blu lampeggiare una volta, tieni premuto il pulsante &quot;CONFIG&quot; finché il LED rimane acceso.\n\n3 - Ora, sul tuo smartphone, connettiti alla rete Wi-Fi chiamata &quot;LightFy&quot; utilizzando la password &quot;adminLFy1&quot;.\n\n4 - Apri l&#39;app e vai alle impostazioni. Compila il campo &quot;Porta&quot; con il numero scritto sotto il dispositivo, quindi fai clic sul pulsante &quot;Connetti&quot;. Il pulsante diventerà blu quando l&#39;app si connetterà al dispositivo.\n\n5 - Inserisci il nome della tua rete Wi-Fi domestica e la relativa password.\n\n6 - Per configurare i campi IP:\n\n\t• Nel campo &quot;Indirizzo IP&quot;, usa un indirizzo disponibile nella tua rete locale.\n\t• Mantieni la &quot;Maschera di Sottorete&quot; come 255.255.255.0.\n\t• Nel campo &quot;Gateway Predefinito&quot;, inserisci l&#39;indirizzo IP del tuo modem o router.\n\t• Mantieni il &quot;DNS&quot; come 8.8.8.8.\n\nIn caso di dubbi, è consigliabile chiedere aiuto a un professionista IT."</string>
+    <string name="txtConfirmSSID">SSID:</string>
+    <string name="txtConfirmPassword">Password:</string>
+    <string name="txtConfirmIP">IP:</string>
+    <string name="txtConfirmSubNet">Sottorete:</string>
+    <string name="txtConfirmGateway">Gateway:</string>
+    <string name="txtConfirmDNS">DNS:</string>
+    <string name="txtConfirmPort">Porta:</string>
+    <string name="tltConfirmation">Conferma:</string>
+    <string name="txtBtnCancel">Cancellare</string>
+    <string name="txtBtnOk">Ok</string>
+    <string name="altRequiredField">Campo obbligatorio!</string>
+    <string name="altInvalidIPAddress">Indirizzo IP non valido.</string>
+    <string name="msgSettingsSaved">Impostazioni salvate!</string>
+    <string name="lblCopyright">Copyright© 2021 - by Ramon A. Valverde</string>
+    <string name="msgSavedSettingsDeleted">Impostazioni salvate eliminate!</string>
+    <string name="altInvalidValue">Valore non valido!</string>
+</resources>
