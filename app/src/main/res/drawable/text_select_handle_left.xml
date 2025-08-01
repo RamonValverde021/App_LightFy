@@ -4,6 +4,6 @@
     android:viewportWidth="24"
     android:viewportHeight="24">
   <path
-      android:fillColor="?attr/clrText"
+      android:fillColor="?attr/clrBtnConfig_Text"
       android:pathData="m21,3v9a9,9 0,0 1,-9 9,9 9,0 0,1 -9,-9 9,9 0,0 1,9 -9z"/>
 </vector>

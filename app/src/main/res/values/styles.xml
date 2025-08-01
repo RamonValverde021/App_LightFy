@@ -80,7 +80,7 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/transparent</item>
-        <item name="android:textColorHighlight">?attr/clrHint</item>
+        <item name="android:textColorHighlight">?attr/clrBtnConfig_RippleColor</item>
         <item name="android:textSelectHandle">@drawable/select_handle_middle</item>
         <item name="android:textSelectHandleLeft">@drawable/text_select_handle_left</item>
         <item name="android:textSelectHandleRight">@drawable/text_select_handle_right</item>

@@ -7,7 +7,7 @@
       android:pathData="m12,1.272 l6.364,6.364a9,9 0,0 1,0 12.728,9 9,0 0,1 -12.728,0 9,9 0,0 1,0 -12.728z"
       android:strokeLineJoin="miter"
       android:strokeWidth="2.25"
-      android:fillColor="?attr/clrText"
+      android:fillColor="?attr/clrBtnConfig_Text"
       android:strokeColor="#00000000"
       android:strokeLineCap="square"/>
 </vector>
